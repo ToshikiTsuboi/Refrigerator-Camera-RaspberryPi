@@ -15,7 +15,7 @@ def main():
 
 def slackpost(channel_name, message, filename, name):
   from slacker import Slacker
-  token = "xoxp-18655778407-18656420960-34494865893-3a3de03c43"
+  token = SLACK_TOKEN
   slacker = Slacker(token)
   result = slacker.files.upload(filename, content=[message], channels=[channel_name])
   slacker.chat.post_message("#"+channel_name, message, username=name)
